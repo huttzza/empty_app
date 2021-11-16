@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'emP:ty App',
       theme: ThemeData(
           //primarySwatch: purple //Colors.blue,
           primaryColor: Color(0xFF613EEA),

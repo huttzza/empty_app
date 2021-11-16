@@ -1,3 +1,6 @@
+import 'package:empty_app/parking_model.dart';
+import 'package:empty_app/parking_draw.dart';
+import 'package:empty_app/pklot_json_example.dart';
 import 'package:flutter/material.dart';
 
 class ParkingDetail extends StatefulWidget {
@@ -8,11 +11,15 @@ class ParkingDetail extends StatefulWidget {
 }
 
 class _ParkingDetailState extends State<ParkingDetail> {
+  List<Space> spaceList = parseSpaces(jsonString);
+
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
     double width = screenSize.width;
     double height = screenSize.height;
+
+    List<Widget> spaceIconList = drawSpaceList(spaceList, context);
 
     return Scaffold(
         appBar: AppBar(
@@ -32,6 +39,7 @@ class _ParkingDetailState extends State<ParkingDetail> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              //parking lot name
               SizedBox(
                 width: width,
                 height: height * 0.08,
@@ -57,6 +65,7 @@ class _ParkingDetailState extends State<ParkingDetail> {
                       ]),
                 ),
               ),
+              //parking lot address
               SizedBox(
                 height: height * 0.07,
                 child: Container(
@@ -70,6 +79,7 @@ class _ParkingDetailState extends State<ParkingDetail> {
               SizedBox(
                 height: height * 0.06,
               ),
+              //parking lot icons
               Container(
                 child: SizedBox(
                   width: width * 0.5,
@@ -81,7 +91,8 @@ class _ParkingDetailState extends State<ParkingDetail> {
                         borderRadius: BorderRadius.all(Radius.circular(6))),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
+                      children:
+                          spaceIconList /*[
                         Icon(Icons.directions_car_filled,
                             color: Colors.white, size: height * 0.05),
                         Icon(Icons.directions_car_filled,
@@ -90,7 +101,8 @@ class _ParkingDetailState extends State<ParkingDetail> {
                             color: Colors.white, size: height * 0.05),
                         Icon(Icons.directions_car_filled,
                             color: Colors.white, size: height * 0.05),
-                      ],
+                      ]*/
+                      ,
                     ),
                   ),
                 ),
