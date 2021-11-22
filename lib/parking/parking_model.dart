@@ -12,6 +12,11 @@ class Space {
         y1 = json['y1'],
         x2 = json['x2'],
         y2 = json['y2'];
+
+  @override
+  String toString() {
+    return '[$isEmpty, $x1, $y1, $x2, $y2]';
+  }
 }
 
 List<Space> parseSpaces(String responseBody) {

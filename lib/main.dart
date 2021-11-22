@@ -1,4 +1,4 @@
-import 'package:empty_app/parking_deatil.dart';
+import 'package:empty_app/parking/parking_deatil.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
                   color: Colors.white),
               bodyText1:
                   TextStyle(fontSize: 16, fontWeight: FontWeight.normal))),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'emP:ty App'),
     );
   }
 }
