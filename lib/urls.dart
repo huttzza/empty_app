@@ -1,4 +1,4 @@
 //local url
 class UrlPrefix {
-  static var urls = "http://172.30.1.16:80"; //"http://localhost:4000/";
+  static var urls = "http://10.0.2.2:8000/";
 }
